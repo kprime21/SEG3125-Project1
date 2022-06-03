@@ -1,0 +1,37 @@
+@import url(//db.onlinewebfonts.com/c/961a181da27e7cbc072ec2fb5bbfe2a9?family=Circular+Std+Bold);
+
+.primaryColour{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237,95,76,1) 0%, rgba(245,98,77,1) 31%, rgba(238,160,196,1) 100%); 
+}
+
+.backgroundColour{
+    color:rgba(237,95,76,1);
+    background-color: rgba(237,95,76,1);
+    border:5px solid rgba(237,95,76,1);
+}
+
+.buttonColour{
+    color:white;
+    background-color:red;
+}
+
+.fontHeader{
+    font-family: "Circular Std Bold";
+    font-size: 36px;
+
+}
+
+.highlightColour1{
+    color: rgb(226, 63, 38);
+    font-size:64px;
+}
+.highlightColour2{
+    color: rgb(223, 43, 43);
+    font-size:36px;
+}
+
+
+.right.carousel-control, .left.carousel-control {
+    display: none;
+}
