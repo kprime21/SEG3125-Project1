@@ -69,7 +69,7 @@ export default function Hero() {
         <br></br>
         <br></br>
         <br></br>
-        <span className={`fw-normal text-white text-center ${styles.fontHeader}`}>Book your appointment <button type="button" class={`btn btn-lg ${styles.buttonColour} rounded-pill`}> Right now!</button></span>
+        <span className={`fw-normal text-white text-center ${styles.fontHeader}`}>Book your appointment <button type="button" className={`btn btn-lg ${styles.buttonColour} rounded-pill`}> Right now!</button></span>
         
         
       </div>
