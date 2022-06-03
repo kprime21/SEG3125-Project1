@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 import styled from "styled-components";
+import Image from "next/image";
 
 
 
@@ -9,13 +10,21 @@ const StyledNavbar = styled.nav`
 
 `;
 
+const ImageHolder = styled.div`
+display:flex;
+span{
+  margin-top:2rem;  
+}
+`;
 const Navbar = () => {
   const router = useRouter()
   return (
     <StyledNavbar className ="navbar navbar-expand-lg">
     <div className="container-fluid">
       <a className="navbar-brand fs-1 text-light" href="#">
-        <img src="/dogicon.svg" alt="" height="96" width="96" className="d-inline-block align-text-center mb-3"/> <span>Vetenarian Services</span>
+        <ImageHolder>
+        <Image src="/dogicon.svg" alt="" height="96" width="96" className="d-inline-block align-text-top"/> <span>Vetenarian Services</span>
+        </ImageHolder>
       </a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
