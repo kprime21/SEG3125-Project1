@@ -13,7 +13,9 @@ const StyledNavbar = styled.nav`
 const ImageHolder = styled.div`
 display:flex;
 span{
-  margin-top:2rem;  
+  margin-top:15px;
+  align-self: center;
+   
 }
 `;
 const Navbar = () => {
