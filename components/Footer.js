@@ -1,13 +1,9 @@
 import styled from "styled-components";
 
 const Foot = styled.div`
-  position: absolute;
-  bottom:0;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  transform: translateX(-50%);
-  left: 50%;
-  display: flex;
+  
+  
+  
   overflow: auto;
 `;
 
@@ -17,17 +13,29 @@ const Footer = () => {
         <div className="container py-4">
             <div className="row gy-4 gx-5">
                 <div className="col-lg-4 col-md-6">
-                    <h5 className="h1 text-white">FB.</h5>
-                    <p className="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                    <p className="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a className="text-primary" href="#">Bootstrapious.com</a></p>
+                    <h5 className="text-white mb-3">Contact</h5>
+                    <ul className="list-unstyled text-muted">
+                        <li><a href="#">Tel.: 613-562-5700</a></li>
+                        <li><a href="#">Toll-free: 1-877-868-8292</a></li>
+                        <li><a href="#">Fax: 613-562-5323</a></li>
+                        <li><a href="#">uOttawainfo@uOttawa.ca</a></li>
+                        <li>550 Cumberland Street</li>
+                      <li>Ottawa ON K1N 6N5 Canada</li>
+                    </ul>
+              
+
+              
                 </div>
                 <div className="col-lg-2 col-md-6">
-                    <h5 className="text-white mb-3">Quick links</h5>
+                    <h5 className="text-white mb-3">Hours Open</h5>
                     <ul className="list-unstyled text-muted">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Get started</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Monday - 5:00 - 17:00</a></li>
+                        <li><a href="#">Tuesday - 5:00 - 17:00</a></li>
+                        <li><a href="#">Wednesday - 5:00 - 17:00</a></li>
+                        <li><a href="#">Thursday - 5:00 - 17:00</a></li>
+                        <li><a href="#">Friday - 5:00 - 17:00</a></li>
+                        <li><a href="#">Saturday - 10:00 - 16:00</a></li>
+                        <li><a href="#">Saturday - 10:00 - 16:00</a></li>
                     </ul>
                 </div>
                 <div className="col-lg-2 col-md-6">

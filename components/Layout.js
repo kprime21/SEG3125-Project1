@@ -7,7 +7,8 @@ const LayoutHolder = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding: 0 0 10rem;
+  
+  
 `;
 
 export default function Layout({children}){

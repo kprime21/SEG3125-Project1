@@ -1,4 +1,7 @@
 
+.mainColour{
+    color:white;  
+}
 
 .primaryColour{
     background: rgb(2,0,36);
@@ -6,9 +9,8 @@
 }
 
 .backgroundColour{
-    color:rgba(237,95,76,1);
-    background-color: rgba(237,95,76,1);
-    border:5px solid rgba(237,95,76,1);
+    background-color: rgb(224, 67, 46);
+    border:5px solid transparent;
 }
 
 .buttonColour{
@@ -35,3 +37,13 @@
 .right.carousel-control, .left.carousel-control {
     display: none;
 }
+
+@media only screen and (max-width: 870px) {
+    .fontHeader .highlightColour2{
+      font-size: 24px;
+    }
+
+    .highlightColour1 {
+        font-size: 36px;
+    }
+  }

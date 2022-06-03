@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
 import styles from './Extra.module.css'
 
@@ -28,7 +29,7 @@ const HeroImagePicture = styled.div`
 position:relative;
 
 width: 100%;
-min-width:150px;
+
 
 
 
@@ -53,30 +54,33 @@ export default function Hero() {
     <>
     <ContainerFluid className="container-fluid">
     <div className="row gx-5 mb-5 shadow-lg rounded">
-      <div className="col-sm-5">
+      <div className="col-md-6 align-self-center">
       <HeroImagePicture>
         <Image src={`/dog.svg`} className="d-block w-100 image" alt="..." layout="fill"/>
       </HeroImagePicture>
       </div>  
-      <div className="col pt-5" align="center">
+      <div className="col pt-5 align-self-center mb-5" align="center">
         <span className={`fw-normal text-white text-center ${styles.fontHeader}`}>Get your <span className={`fw-bold ${styles.highlightColour2}`}>pet</span> the best help at <span className={`fw-bold ${styles.highlightColour1}`}> Magnolia</span></span>
         <br></br>
         <span className={`fw-normal text-white text-center ${styles.fontHeader}`}>We only offer the best Vetenarian services for your pets</span>
         <br></br>
         <span className={`fw-normal text-white text-center ${styles.fontHeader}`}>Provided by the most experienced and gentle experts</span>
         <br></br>
-        <span className={`fw-normal text-white text-center ${styles.fontHeader}`}>We will be with your pet until the<span className={`fw-bold ${styles.highlightColour1}`}> END</span> </span>
         <br></br>
-        <br></br>
-        <br></br>
-        <span className={`fw-normal text-white text-center ${styles.fontHeader}`}>Book your appointment <button type="button" className={`btn btn-lg ${styles.buttonColour} rounded-pill`}> Right now!</button></span>
+        
+        <span className={`fw-normal text-white text-center ${styles.fontHeader}`}>Book your appointment  <span></span>
+          <Link href="/bookings">
+           <button type="button" className={`btn btn-lg ${styles.buttonColour} rounded-pill`}> Right Now! </button> 
+          </Link>
+          </span>
+        
         
         
       </div>
     </div>
 
     {/* SECOND */}
-    <div className="row gx-5 mt-5"> 
+    <div className="row gx-5 mt-5 mb-5"> 
     <div className="col-sm-6 col-md-8">
     <CarouselHolder id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner rounded">
@@ -100,51 +104,50 @@ export default function Hero() {
     
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
     <span className="visually-hidden">Previous</span>
   </button>
   <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span className="carousel-control-next-icon" aria-hidden="true"></span>
     <span className="visually-hidden">Next</span>
   </button>
 </CarouselHolder>
 {/* end of carousel*/}
 </div>
-<div className="col align-self-top">
-<div className={`card w-100 justify-content-between ${styles.backgroundColour} text-light`}> 
+<div className="col align-self-top"> 
+<div className={`card w-100 h-100 justify-content-between ${styles.backgroundColour} text-light`}> 
   <div className={`card-body`}>
     <h5 className="card-title">Card title</h5>
     <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
     <a href="#" className="btn btn-primary">Button</a>
   </div>
 </div>
-<div className={`card w-100 justify-content-between ${styles.backgroundColour}  text-light`}> 
-  <div className={`card-body `}>
-    <h5 className="card-title">Card title</h5>
-    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" className="btn btn-primary">Button</a>
-  </div>
-</div>
+
 </div>
 </div>
 
 {/* end of row 2*/}
 
-<div className="row mt-5">
-<div className="card w-50">
-  <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" className="btn btn-primary">Button</a>
+
+{/* THIRD */}
+
+<div className="row mt-5 ">
+  <div className="col" align="center">
+    <div className={`card w-75 justify-content-between ${styles.backgroundColour}  text-light`}>
+      <div className="card-body ">
+        <h5 className="card-title">Services</h5>
+        <p className="card-text">We offer an array of services </p>
+        <a href="#" className="btn btn-primary">View</a>
+      </div>
+    </div>
   </div>
-</div>
-<div className="card w-50">
-  <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" className="btn btn-primary">Button</a>
+  <div className="col" align="center">
+    <div className={`card w-75 justify-content-between ${styles.backgroundColour}  text-light`}>
+      <div className="card-body">
+        <h5 className="card-title">Experts</h5>
+        <p className="card-text">We offer an array of experts</p>
+        <a href="#" className="btn btn-primary">View</a>
+      </div>
+    </div>
   </div>
-</div>
 </div>
 </ContainerFluid>
       
