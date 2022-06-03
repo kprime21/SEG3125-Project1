@@ -1,4 +1,4 @@
-@import url(//db.onlinewebfonts.com/c/961a181da27e7cbc072ec2fb5bbfe2a9?family=Circular+Std+Bold);
+
 
 .primaryColour{
     background: rgb(2,0,36);
@@ -17,7 +17,7 @@
 }
 
 .fontHeader{
-    font-family: "Circular Std Bold";
+    font-family: "Circular Std Black";
     font-size: 36px;
 
 }

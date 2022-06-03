@@ -1,4 +1,3 @@
-@import url(//db.onlinewebfonts.com/c/961a181da27e7cbc072ec2fb5bbfe2a9?family=Circular+Std+Bold);
 html,
 body {
   /* background-color: #bbaa99; */
@@ -10,7 +9,7 @@ body {
   padding: 0;
   margin: 0;
   /* font-family: 'DM Sans',sans-serif; */
-  font-family: "Circular Std Bold";
+  font-family: "Circular Std Black";
                                                 
 }
 
