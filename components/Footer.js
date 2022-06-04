@@ -43,7 +43,9 @@ const Footer = () => {
                     <h5 className="text-white mb-3">Site Map</h5>
                     <ul className="list-unstyled text-muted">
                     <li className="nav-item">
-            <a className={`nav-link active`} aria-current="page" href="#">About</a>
+          <Link href="/">
+            <a className={`nav-link ${styles.mainColour}`}>Home</a>
+            </Link>
           </li>
           <li className="nav-item">
             <Link href="/services">

@@ -82,7 +82,7 @@ export default function Hero() {
     </div>
 
     {/* SECOND */}
-    <div className="row mt-5 mb-5"> 
+    <div className="row mt-5"> 
     <div className="col-lg-8">
     <CarouselHolder id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner rounded">
@@ -114,12 +114,25 @@ export default function Hero() {
 </CarouselHolder>
 {/* end of carousel*/}
 </div>
-<div className="col align-self-center" align='center'> 
-<div className={`card w-100 ${styles.backgroundColour} text-light`}> 
+<div className="col align-self-center " align='center'> 
+<div className={`card ${styles.backgroundColour} text-light`}> 
   <div className={`card-body`}>
-    <h5 className="card-title">Card title</h5>
-    <p className="card-text fs-2" align='center'> Want to learn more about Magnolia vetenarians? </p>
-    <p className="card-text fs-2" align='center'> Want to learn more about Magnolia vetenarians? <br></br><a href="#" className="btn btn-primary" align='center'>Click here</a> to read more about our mission!</p>
+    
+    <p className="card-text fs-2" align='center'> To learn more about our services <br></br><a href="#" className="btn btn-primary" align='center'> Click here</a></p>
+    
+    
+    
+  </div>
+</div>
+
+</div>
+<div className="col align-self-center " align='center'> 
+<div className={`card ${styles.backgroundColour} text-light `}> 
+  <div className={`card-body`}>
+    
+    <p className="card-text fs-2" align='center'> To learn more about our experts <br></br><a href="#" className="btn btn-primary" align='center'>Click here</a></p>
+    
+    
     
   </div>
 </div>
@@ -134,15 +147,18 @@ export default function Hero() {
 
 <div className="row mt-5 ">
   <div className="col" align="center">
-    <div className={`card w-75 justify-content-between ${styles.backgroundColour}  text-light`}>
+    <div className={`card w-50 justify-content-between ${styles.backgroundColour}  text-light`}>
       <div className="card-body ">
-        <h5 className="card-title">Services</h5>
-        <p className="card-text">We offer an array of services </p>
-        <a href="#" className="btn btn-primary">View</a>
+        <h5 className="card-title">Already have an appointment booked?</h5>
+        <p className="card-text">Enter your phone number here to see details! </p>
+        <div className="input-group mb-3">
+            <input type="text" className="form-control" placeholder="Phone Number" aria-label="Recipient's username" aria-describedby="button-addon2" style={{textAlign:'center'}}/>
+            <button className="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+          </div>
       </div>
     </div>
   </div>
-  <div className="col" align="center">
+  {/* <div className="col" align="center">
     <div className={`card w-75 justify-content-between ${styles.backgroundColour}  text-light`}>
       <div className="card-body">
         <h5 className="card-title">Experts</h5>
@@ -150,7 +166,7 @@ export default function Hero() {
         <a href="#" className="btn btn-primary">View</a>
       </div>
     </div>
-  </div>
+  </div> */}
 </div>
 </ContainerFluid>
       

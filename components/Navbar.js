@@ -48,11 +48,11 @@ const Navbar = () => {
             <a className={`nav-link ${styles.mainColour}`}>Home</a>
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link href="/about">
             <a className={`nav-link ${styles.mainColour}`}>About</a>
             </Link>
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link href="/services">
               <a className={`nav-link ${styles.mainColour}`}>Services</a>
