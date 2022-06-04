@@ -82,7 +82,7 @@ export default function Hero() {
     </div>
 
     {/* SECOND */}
-    <div className="row gx-5 mt-5 mb-5"> 
+    <div className="row mt-5 mb-5"> 
     <div className="col-lg-8">
     <CarouselHolder id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner rounded">
@@ -114,14 +114,13 @@ export default function Hero() {
 </CarouselHolder>
 {/* end of carousel*/}
 </div>
-<div className="col align-self-center"> 
-<div className={`card w-100 justify-content-between ${styles.backgroundColour} text-light`}> 
+<div className="col align-self-center" align='center'> 
+<div className={`card w-100 ${styles.backgroundColour} text-light`}> 
   <div className={`card-body`}>
     <h5 className="card-title">Card title</h5>
-    <p className="card-text"> Want to learn more about Magnolia vetenarians? Click here to read more about our mission!
+    <p className="card-text fs-2" align='center'> Want to learn more about Magnolia vetenarians? </p>
+    <p className="card-text fs-2" align='center'> Want to learn more about Magnolia vetenarians? <br></br><a href="#" className="btn btn-primary" align='center'>Click here</a> to read more about our mission!</p>
     
-    </p>
-    <a href="#" className="btn btn-primary">Button</a>
   </div>
 </div>
 

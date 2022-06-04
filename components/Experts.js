@@ -1,22 +1,22 @@
 import styled from "styled-components";
 
 
-const ServiceHolder = styled.div`
+const ExpertsHolder = styled.div`
 
 `;
 
 
-const ServiceExamples = [{name:'Medical', text:'medical help'}, {name:'Dental', text:'teeth cleaning'}, {name:'Vaccinations', text:'prevent rabies'}
-, {name:'Preventive care', text:'disease prevention'}, {name:'Laser Therapy', text:'healing through lasers'}, 
-{name:'Radiology', text:'scans'}, {name:'Surgical', text:'surgery'}, 
-{name:'Grooming', text:'clean the pet'}, {name:'Emergency care', text:'urgent care'}
+const ServiceExamples = [{name:'John', text:'medical help'}, {name:'Joe', text:'teeth cleaning'}, {name:'Bartholomew', text:'prevent rabies'}
+, {name:'Dingle', text:'disease prevention'}, {name:'Dale', text:'healing through lasers'}, 
+{name:'Melly', text:'scans'}, {name:'Carti', text:'surgery'}, 
+{name:'Symere', text:'clean the pet'}, {name:'Winthrop', text:'urgent care'}
 ]
 
 
-export default function Services() {
+export default function Experts() {
     return(
         <>
-        <ServiceHolder>
+        <ExpertsHolder>
         
         
           <div className="input-group mb-3">
@@ -35,7 +35,7 @@ export default function Services() {
           </div> 
            )
          })}
-        </ServiceHolder>
+        </ExpertsHolder>
         </>
     )
 }

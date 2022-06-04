@@ -56,7 +56,7 @@ const Footer = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link href="/bookings">
+            <Link href="/booking">
               <a className={`nav-link ${styles.mainColour}`}>Book Appointment</a>
             </Link>
           </li>

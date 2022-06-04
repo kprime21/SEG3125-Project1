@@ -13,11 +13,18 @@ const StyledNavbar = styled.nav`
 
 const ImageHolder = styled.div`
 display:flex;
+transition: transform .2s;
+
+:hover{
+  transform:scale(1.005);
+}
 span{
   margin-top:15px;
   align-self: center;
+  
    
 }
+
 `;
 const Navbar = () => {
   const router = useRouter()
@@ -27,7 +34,7 @@ const Navbar = () => {
       <Link href="/">
       <a className="navbar-brand fs-1 text-light" >
         <ImageHolder>
-        <Image src="/dogicon.svg" alt="" height="96" width="96" className="d-inline-block align-text-top"/> <span>Vetenarian Services</span>
+        <Image src="/dogicon.svg" alt="" height="96" width="96" className="d-inline-block align-text-top image"/> <span>Vetenarian Services</span>
         </ImageHolder>
       </a>
       </Link>
@@ -36,8 +43,15 @@ const Navbar = () => {
       </button>
       <div className="collapse navbar-collapse flex-row-reverse" id="navbarNav">
         <ul className="navbar-nav">
+        <li className="nav-item">
+            <Link href="/">
+            <a className={`nav-link ${styles.mainColour}`}>Home</a>
+            </Link>
+          </li>
           <li className="nav-item">
-            <a className={`nav-link active`} aria-current="page" href="#">About</a>
+            <Link href="/about">
+            <a className={`nav-link ${styles.mainColour}`}>About</a>
+            </Link>
           </li>
           <li className="nav-item">
             <Link href="/services">
@@ -50,7 +64,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link href="/bookings">
+            <Link href="/booking">
               <a className={`nav-link ${styles.mainColour}`}>Book Appointment</a>
             </Link>
           </li>
