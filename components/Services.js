@@ -25,7 +25,7 @@ export default function Services() {
             <input type="text" className="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2"/>
             <button className="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
           </div>
-        <div class="row row-cols-1 row-cols-md-4 g-4 mx-1">
+        <div className="row row-cols-1 row-cols-md-4 g-4 mx-1">
          {ServiceExamples.map(item=> {
            return(
             <div key ={item.name} className="card " >
