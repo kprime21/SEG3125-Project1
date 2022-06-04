@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-const Services = styled.div`
+const ServiceHolder = styled.div`
 height:100vh;
 `;
 
@@ -11,7 +11,7 @@ height:100vh;
 export default function Services() {
     return(
         <>
-        <Services>
+        <ServiceHolder>
         <div className="input-group mb-3">
   <input type="text" className="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2"/>
   <button className="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
@@ -24,7 +24,7 @@ export default function Services() {
     <a href="#" className="btn btn-primary">Go somewhere</a>
   </div>
 </div>
-        </Services>
+        </ServiceHolder>
         </>
     )
 }
