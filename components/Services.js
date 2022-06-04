@@ -8,7 +8,7 @@ height:100vh;
 
 
 
-export default() => {
+export default function Services() {
     return(
         <>
         <Services>
