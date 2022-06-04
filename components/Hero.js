@@ -145,7 +145,7 @@ export default function Hero() {
 
 {/* THIRD */}
 
-<div className="row mt-5 ">
+{/* <div className="row mt-5 ">
   <div className="col" align="center">
     <div className={`card w-50 justify-content-between ${styles.backgroundColour}  text-light`}>
       <div className="card-body ">
@@ -158,7 +158,7 @@ export default function Hero() {
       </div>
     </div>
   </div>
-  {/* <div className="col" align="center">
+  <div className="col" align="center">
     <div className={`card w-75 justify-content-between ${styles.backgroundColour}  text-light`}>
       <div className="card-body">
         <h5 className="card-title">Experts</h5>
@@ -166,8 +166,8 @@ export default function Hero() {
         <a href="#" className="btn btn-primary">View</a>
       </div>
     </div>
-  </div> */}
-</div>
+  </div> 
+</div> */}
 </ContainerFluid>
       
     </>
