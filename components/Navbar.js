@@ -22,7 +22,7 @@ span{
 const Navbar = () => {
   const router = useRouter()
   return (
-    <StyledNavbar className ="navbar navbar-expand-lg">
+    <StyledNavbar className ="navbar navbar-dark navbar-expand-lg">
     <div className="container-fluid">
       <Link href="/">
       <a className="navbar-brand fs-1 text-light" >

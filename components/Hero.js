@@ -27,11 +27,7 @@ width:100%;
 
 const HeroImagePicture = styled.div`
 position:relative;
-
 width: 100%;
-
-
-
 
 
 
@@ -53,22 +49,28 @@ export default function Hero() {
   return (
     <>
     <ContainerFluid className="container-fluid">
-    <div className="row gx-5 mb-5 shadow-lg rounded">
-      <div className="col-md-6 align-self-center">
+    <div className="row g-2 mb-5 shadow-lg rounded">
+    <div className="col-lg-4">
       <HeroImagePicture>
         <Image src={`/dog.svg`} className="d-block w-100 image" alt="..." layout="fill"/>
       </HeroImagePicture>
       </div>  
-      <div className="col pt-5 align-self-center mb-5" align="center">
-        <span className={`fw-normal text-white text-center ${styles.fontHeader}`}>Get your <span className={`fw-bold ${styles.highlightColour2}`}>pet</span> the best help at <span className={`fw-bold ${styles.highlightColour1}`}> Magnolia</span></span>
+      <div className="col  align-self-center mb-5" align="center">
+        <span className={`fw-normal text-white text-center fs-2 ${styles.fontHeader}`}>Get your <span className={`fw-bold fs-3 ${styles.highlightColour2}`}>pet</span> the best help at <span className={`fw-bold fs-1 ${styles.highlightColour1}`}> Magnolia</span></span>
         <br></br>
-        <span className={`fw-normal text-white text-center ${styles.fontHeader}`}>We only offer the best Vetenarian services for your pets</span>
         <br></br>
-        <span className={`fw-normal text-white text-center ${styles.fontHeader}`}>Provided by the most experienced and gentle experts</span>
+        <br></br>
+        <span className={`fw-normal text-white text-center fs-3 ${styles.fontHeader}`}>Only the best Vetenarian services for your pets</span>
+        <br></br>
+        <br></br>
+        <br></br>
+        <span className={`fw-normal text-white text-center fs-3 ${styles.fontHeader}`}>Provided by the most experienced and gentle experts</span>
+        <br></br>
         <br></br>
         <br></br>
         
-        <span className={`fw-normal text-white text-center ${styles.fontHeader}`}>Book your appointment  <span></span>
+        
+        <span className={`fw-normal text-white text-center fs-1 ${styles.fontHeader}`}>Book your appointment  <span></span>
           <Link href="/bookings">
            <button type="button" className={`btn btn-lg ${styles.buttonColour} rounded-pill`}> Right Now! </button> 
           </Link>
@@ -81,7 +83,7 @@ export default function Hero() {
 
     {/* SECOND */}
     <div className="row gx-5 mt-5 mb-5"> 
-    <div className="col-sm-6 col-md-8">
+    <div className="col-lg-8">
     <CarouselHolder id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner rounded">
     <div className="carousel-item active">
@@ -112,11 +114,13 @@ export default function Hero() {
 </CarouselHolder>
 {/* end of carousel*/}
 </div>
-<div className="col align-self-top"> 
-<div className={`card w-100 h-100 justify-content-between ${styles.backgroundColour} text-light`}> 
+<div className="col align-self-center"> 
+<div className={`card w-100 justify-content-between ${styles.backgroundColour} text-light`}> 
   <div className={`card-body`}>
     <h5 className="card-title">Card title</h5>
-    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <p className="card-text"> Want to learn more about Magnolia vetenarians? Click here to read more about our mission!
+    
+    </p>
     <a href="#" className="btn btn-primary">Button</a>
   </div>
 </div>

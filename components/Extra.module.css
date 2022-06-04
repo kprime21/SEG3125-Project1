@@ -20,17 +20,17 @@
 
 .fontHeader{
     font-family: "Circular Std Bold";
-    font-size: 36px;
+    
 
 }
 
 .highlightColour1{
     color: rgb(226, 63, 38);
-    font-size:64px;
+    
 }
 .highlightColour2{
     color: rgb(223, 43, 43);
-    font-size:36px;
+    
 }
 
 
@@ -38,12 +38,3 @@
     display: none;
 }
 
-@media only screen and (max-width: 870px) {
-    .fontHeader .highlightColour2{
-      font-size: 24px;
-    }
-
-    .highlightColour1 {
-        font-size: 36px;
-    }
-  }
