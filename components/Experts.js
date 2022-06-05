@@ -43,7 +43,7 @@ export default function Experts() {
   })
 
   const setExpert = ({item}) => {
-    localStorage.setItem('expert', item.name)
+    sessionStorage.setItem('expert', item.name)
   }
     return(
         <>

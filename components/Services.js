@@ -49,7 +49,7 @@ export default function Services() {
   })
 
   const setService = ({item}) => {
-    localStorage.setItem('service', item.name)
+    sessionStorage.setItem('service', item.name)
     router.push("/booking")
   }
 
