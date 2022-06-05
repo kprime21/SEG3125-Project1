@@ -9,7 +9,12 @@
 }
 
 .backgroundColour{
-    background-color: rgb(224, 67, 46);
+    background-color: rgb(236, 105, 88);
+    border:5px solid transparent;
+}
+
+.cardColour{
+    background-color: rgb(236, 105, 88);
     border:5px solid transparent;
 }
 

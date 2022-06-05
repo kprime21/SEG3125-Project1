@@ -71,8 +71,8 @@ export default function Hero() {
         
         
         <span className={`fw-normal text-white text-center fs-1 ${styles.fontHeader}`}>Book your appointment  <span></span>
-          <Link href="/bookings">
-           <button type="button" className={`btn btn-lg ${styles.buttonColour} rounded-pill`}> Right Now! </button> 
+          <Link href="/booking">
+           <button type="button" className={`btn btn-lg fs-1 ${styles.buttonColour} rounded-pill shadow-lg`}> Right Now! </button> 
           </Link>
           </span>
         
@@ -114,11 +114,12 @@ export default function Hero() {
 </CarouselHolder>
 {/* end of carousel*/}
 </div>
-<div className="col align-self-center " align='center'> 
-<div className={`card ${styles.backgroundColour} text-light`}> 
+<div className="col align-self-center" align='center'> 
+<div className="col align-self-center pb-5 w-50 " align='center'> 
+<div className={`card ${styles.backgroundColour} shadow-lg  rounded text-light`}> 
   <div className={`card-body`}>
     
-    <p className="card-text fs-2" align='center'> To learn more about our services <br></br><a href="#" className="btn btn-primary" align='center'> Click here</a></p>
+    <p className="card-text fs-2" align='center'> To learn more about our services <br></br><a href="#" className="btn btn-primary " align='center'> Click here</a></p>
     
     
     
@@ -126,8 +127,8 @@ export default function Hero() {
 </div>
 
 </div>
-<div className="col align-self-center " align='center'> 
-<div className={`card ${styles.backgroundColour} text-light `}> 
+<div className="col align-self-center w-50 " align='center'> 
+<div className={`card ${styles.backgroundColour} shadow-lg rounded text-light `}> 
   <div className={`card-body`}>
     
     <p className="card-text fs-2" align='center'> To learn more about our experts <br></br><a href="#" className="btn btn-primary" align='center'>Click here</a></p>
@@ -137,6 +138,7 @@ export default function Hero() {
   </div>
 </div>
 
+</div>
 </div>
 </div>
 
