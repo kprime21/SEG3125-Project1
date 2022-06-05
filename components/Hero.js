@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import styles from './Extra.module.css'
+import styles from './Extra.module.css';
+import { useRouter } from "next/router";
 
 const pics = ['amico.svg', 'bro.svg', 'cuate.svg', 'pana.svg','rafiki.svg'];
 
@@ -46,6 +47,7 @@ width: 100%;
 `;
 
 export default function Hero() {
+  
   return (
     <>
     <ContainerFluid className="container-fluid">
@@ -119,7 +121,7 @@ export default function Hero() {
 <div className={`card ${styles.backgroundColour} shadow-lg  rounded text-light`}> 
   <div className={`card-body`}>
     
-    <p className="card-text fs-2" align='center'> To learn more about our services <br></br><a href="#" className="btn btn-primary " align='center'> Click here</a></p>
+    <p className="card-text fs-2" align='center'> To learn more about our services <br></br><Link href="/services"><a className="btn btn-primary " align='center'> Click here</a></Link></p>
     
     
     
@@ -131,7 +133,7 @@ export default function Hero() {
 <div className={`card ${styles.backgroundColour} shadow-lg rounded text-light `}> 
   <div className={`card-body`}>
     
-    <p className="card-text fs-2" align='center'> To learn more about our experts <br></br><a href="#" className="btn btn-primary" align='center'>Click here</a></p>
+    <p className="card-text fs-2" align='center'> To learn more about our experts <br></br><Link href="/experts"><a href="" className="btn btn-primary " align='center'> Click here</a></Link></p>
     
     
     
