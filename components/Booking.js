@@ -181,7 +181,7 @@ export default function Booking(){
 
 
 
-                <div className="row shadow-lg rounded w-50 mx-auto">
+                <div className="row w-50 mx-auto">
                 <button type="button" onClick={confirmAppointment} data-bs-toggle="modal" data-bs-target={`#modalConfirm`} className={`btn btn-lg ${styles.buttonColour} rounded-pill`}> Book your appointment! </button> 
 
                 <div className="modal fade" id={`modalConfirm`} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
