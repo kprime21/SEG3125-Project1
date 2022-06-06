@@ -32,6 +32,10 @@
     color:white;
     background-color:rgb(238, 59, 59);
 }
+.buttonColourWithBorder{
+    background-color:rgb(238, 59, 59);
+    border:5px solid transparent;
+}
 
 .fontHeader{
     font-family: "Circular Std Bold";

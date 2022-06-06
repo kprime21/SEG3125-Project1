@@ -77,8 +77,8 @@ export default function Booking(){
     return(
         <>
             <ContainerFluid  className="container-fluid">
-                <div className="row  mb-5 d-flex flex-row justify-content-evenly">
-                    <div className="col-lg-3 shadow-lg rounded fs-1 py-3 mb-3 d-flex flex-column" style={{color:'white'}} align="center">
+                <div className="row  mb-5 d-flex flex-row justify-content-evenly " >
+                    <div className="col-lg-3 shadow-lg rounded fs-2 py-3 mb-3 d-flex flex-column " style={{color:'white'}} align="center">
                     Service: {(service=='-' || service==null) ? 'None' : service.name}
                     <br></br>
                     
@@ -97,7 +97,7 @@ export default function Booking(){
                     
                     
                     
-                    <div className="col-lg-3 shadow-lg rounded fs-1 mb-3 py-3 d-flex flex-column" style={{color:'white'}} align="center">
+                    <div className="col-lg-3 shadow-lg rounded fs-2 mb-3 py-3 d-flex flex-column" style={{color:'white'}} align="center">
                     Expert: {(expert=='-' || expert==null) ? 'None' : expert.name}
                     <br></br>
                     
@@ -132,7 +132,7 @@ export default function Booking(){
                 return (
                   <React.Fragment key={item}>
                   <input  type="radio" className="btn-check" name="btnradio" id={`btnradio${item}`} autoComplete="off"/>
-                  <label  onClick={changeDate} className={` ${styles.darkerBackgroundColour} btn btn-primary`} htmlFor={`btnradio${item}`}>{item}:00 - {item+1}:00</label>
+                  <label  onClick={changeDate} className={` ${styles.buttonColourWithBorder} btn btn-primary`} htmlFor={`btnradio${item}`}>{item}:00 - {item+1}:00</label>
                   </React.Fragment>
                 )}
                 ):
@@ -142,7 +142,7 @@ export default function Booking(){
                     return (
                       <React.Fragment key={item+100}>
                       <input type="radio" className="btn-check" name="btnradio" id={`btnradio${item}`} autoComplete="off"/>
-                      <label onClick ={changeDate} className={` ${styles.darkerBackgroundColour} btn btn-primary`} htmlFor={`btnradio${item}`}>{item}:00 - {item+1}:00</label>
+                      <label onClick ={changeDate} className={` ${styles.buttonColourWithBorder} btn btn-primary`} htmlFor={`btnradio${item}`}>{item}:00 - {item+1}:00</label>
                       </React.Fragment>
                     )}
                     )
