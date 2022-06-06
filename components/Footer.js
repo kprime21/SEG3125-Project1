@@ -65,14 +65,18 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="col-lg-4 col-md-6">
-                    <h5 className="text-white mb-3">Newsletter</h5>
-                    <p className="small text-muted">Sign up for our newsletter!</p>
+                    <h5 className="text-white mb-3">Magnolia Veterinarian Services</h5>
+                    
+                    {/* <p className="small text-muted">Sign up for our newsletter!</p>
                     <form action="#">
                         <div className="input-group mb-3">
                             <input className="form-control" type="text" placeholder="Recipient's email" aria-label="Recipient's username" aria-describedby="button-addon2"/>
                             <button className="btn btn-primary" id="button-addon2" type="button"><i className="fas fa-paper-plane"></i></button>
                         </div>
-                    </form>
+                    </form> */}
+                    <a className="small text-muted" href="https://storyset.com/">illustrations by Storyset</a>
+                    <br></br>
+                    <a className="small text-muted" href="https://github.com/kprime21">Github</a>
                 </div>
             </div>
         </div>
