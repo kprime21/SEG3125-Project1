@@ -78,7 +78,7 @@ export default function Hero() {
           </Link>
           </span>
         
-        
+          
         
       </div>
     </div>
@@ -121,7 +121,7 @@ export default function Hero() {
 <div className={`card ${styles.backgroundColour} shadow-lg  rounded text-light`}> 
   <div className={`card-body`}>
     
-    <p className="card-text fs-2" align='center'> To learn more about our services <br></br><Link href="/services"><a className="btn btn-primary " align='center'> Click here</a></Link></p>
+    <p className="card-text fs-2" align='center'> To learn more about our services <br></br><Link href="/services"><a className={`btn btn-sm fs-4 ${styles.buttonColour} rounded-pill shadow-lg`} align='center'> Click here</a></Link></p>
     
     
     
@@ -133,7 +133,7 @@ export default function Hero() {
 <div className={`card ${styles.backgroundColour} shadow-lg rounded text-light `}> 
   <div className={`card-body`}>
     
-    <p className="card-text fs-2" align='center'> To learn more about our experts <br></br><Link href="/experts"><a href="" className="btn btn-primary " align='center'> Click here</a></Link></p>
+    <p className="card-text fs-2" align='center'> To learn more about our experts <br></br><Link href="/experts"><a href="" className={`btn btn-sm fs-4 ${styles.buttonColour} rounded-pill shadow-lg`} align='center'> Click here</a></Link></p>
     
     
     

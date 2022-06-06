@@ -14,7 +14,7 @@
 }
 
 .darkerBackgroundColour{
-    background-color: rgb(161, 44, 29);
+    background-color: rgb(179, 37, 37);
     border:5px solid transparent;
 }
 
@@ -30,7 +30,7 @@
 
 .buttonColour{
     color:white;
-    background-color:red;
+    background-color:rgb(238, 59, 59);
 }
 
 .fontHeader{

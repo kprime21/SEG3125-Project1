@@ -97,7 +97,7 @@ export default function Services() {
                       href="#"
                       data-bs-toggle="modal"
                       data-bs-target={`#exampleModal${item.id}`}
-                      className="btn mt-auto btn-primary"
+                      className={`btn btn-md mt-auto ${styles.buttonColour} rounded-pill shadow-lg`}
                     >
                       Read More
                     </a>
@@ -129,7 +129,7 @@ export default function Services() {
                     <div className={`modal-footer ${styles.backgroundColour}`} >
                       <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                       
-                       <button type="button" className="btn btn-primary"  data-bs-dismiss="modal" onClick={() => setService({item})}>Select this service</button>
+                       <button type="button" className={`btn btn-md mt-auto ${styles.buttonColour} shadow-lg`}  data-bs-dismiss="modal" onClick={() => setService({item})}>Select this service</button>
                       
                     </div>
                   </div>

@@ -120,7 +120,7 @@ export default function Booking(){
                 <div className="row  mb-5 d-flex flex-column justify-content-center align-items-center">
                 <div className="col-lg-4  fs-2 py-5" style={{color:'white'}} align="center">
                   Pick your day:
-                        <Calendar className="my-auto" onChange={changeDay} value={value}></Calendar>
+                        <Calendar style={{backgroundColor:'red'}} className="my-auto" onChange={changeDay} value={value}></Calendar>
                       
                     </div>
                     <div className="col-lg-4  fs-2 my-5 " style={{color:'white'}} align="center" >
@@ -193,7 +193,17 @@ export default function Booking(){
                     </div>
                     <div className="modal-body">
                     <div className="container-fluid">
-                    {service==null || service=='-'|| expert==null || expert=='-' ? <div> You must select a service and expert!</div>  :
+                    {service==null || service=='-'|| expert==null || expert=='-' || info.name=="" || info.email=="" || info.phone=="" || date==null? <div> 
+                      
+                      
+                    
+                    {service==null ? <>You must selet a service <br></br></> : <span></span>}  
+                    {expert==null? <>You must selet a expert  <br></br></> : <span></span>}
+                    {info.name==""? <>You must enter a name  <br></br></>:<span></span>}
+                    {info.email==""?<>You must enter a email  <br></br></>:<span></span>}
+                    {info.phone==""? <>You must enter a phone number  <br></br></>:<span></span>}
+                    {date==null ? <>You must select a time</>: <span></span>}
+                    </div>  :
                       
                       <>
                       <h1 style={{color:'white'}} align="center">Hi! {info.name}</h1>
