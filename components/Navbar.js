@@ -34,7 +34,7 @@ const Navbar = () => {
       <Link href="/">
       <a className="navbar-brand fs-1 text-light" >
         <ImageHolder>
-        <Image src="/dogicon.svg" alt="" height="96" width="96" className="d-inline-block align-text-top image"/> <span>Vetenarian Services</span>
+        <Image src="/dogicon.svg" alt="" height="96" width="96" className="d-inline-block align-text-top image"/> <span>Magnolia Petcare</span>
         </ImageHolder>
       </a>
       </Link>

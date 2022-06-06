@@ -13,6 +13,16 @@
     border:5px solid transparent;
 }
 
+.darkerBackgroundColour{
+    background-color: rgb(161, 44, 29);
+    border:5px solid transparent;
+}
+
+.inputColour{
+    background-color:#F1614D;
+    border:5px solid transparent;
+}
+
 .cardColour{
     background-color: rgb(236, 105, 88);
     border:5px solid transparent;
@@ -36,6 +46,10 @@
 .highlightColour2{
     color: rgb(223, 43, 43);
     
+}
+
+.lightColour{
+    color:rgb(250, 216, 212);
 }
 
 
