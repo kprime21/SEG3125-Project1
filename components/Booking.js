@@ -120,7 +120,7 @@ export default function Booking(){
                 <div className="row  mb-5 d-flex flex-column justify-content-center align-items-center">
                 <div className="col-lg-4  fs-2 py-5"  align="center">
                   <span style={{color:'white'}}>Pick your day:</span>
-                        <Calendar className={`my-auto w-100 `} onChange={changeDay} value={value}></Calendar>
+                        <Calendar  minDate={new Date()} className={`my-auto w-100 `} onChange={changeDay} value={value}></Calendar>
                       
                     </div>
                     <div className="col-lg-4  fs-2 my-5 " style={{color:'white'}} align="center" >
@@ -179,7 +179,17 @@ export default function Booking(){
                   
                 </div>
 
-
+                <svg xmlns="http://www.w3.org/2000/svg" style={{display: "none"}}>
+  <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+  </symbol>
+  <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+  </symbol>
+  <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+  </symbol>
+</svg>
 
                 <div className="row w-50 mx-auto">
                 <button type="button" onClick={confirmAppointment} data-bs-toggle="modal" data-bs-target={`#modalConfirm`} className={`btn btn-lg ${styles.buttonColour} rounded-pill my-5`}> Book your appointment! </button> 
@@ -197,12 +207,38 @@ export default function Booking(){
                       
                       
                     
-                    {service==null ? <>You must selet a service <br></br></> : <span></span>}  
-                    {expert==null? <>You must selet a expert  <br></br></> : <span></span>}
-                    {info.name==""? <>You must enter a name  <br></br></>:<span></span>}
-                    {info.email==""?<>You must enter a email  <br></br></>:<span></span>}
-                    {info.phone==""? <>You must enter a phone number  <br></br></>:<span></span>}
-                    {date==null ? <>You must select a time</>: <span></span>}
+                    {service==null ? 
+                    <div className="alert alert-danger d-flex align-items-center" role="alert">
+                      <svg className="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlinkHref="#exclamation-triangle-fill"/></svg>
+                      <div>You must select a service</div>
+                    </div> : <span></span>}  
+                    {expert==null? <div className="alert alert-danger d-flex align-items-center" role="alert">
+                      <svg className="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlinkHref="#exclamation-triangle-fill"/></svg>
+                      <div>You must select a expert</div>
+                    </div> : <span></span>}
+                    {date==null ? <div className="alert alert-danger d-flex align-items-center" role="alert">
+                      <svg className="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlinkHref="#exclamation-triangle-fill"/></svg>
+                      <div>You must select a date</div>
+                    </div> : <span></span>}
+                    {info.name==""? <div className="alert alert-danger d-flex align-items-center" role="alert">
+                      <svg className="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlinkHref="#exclamation-triangle-fill"/></svg>
+                      <div>You must select a name</div>
+                    </div> : <span></span>}
+                    {info.email==""?<div className="alert alert-danger d-flex align-items-center" role="alert">
+                      <svg className="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlinkHref="#exclamation-triangle-fill"/></svg>
+                      <div>You must enter an email</div>
+                    </div> : <span></span>}
+                    {info.phone==""? <div className="alert alert-danger d-flex align-items-center" role="alert">
+                      <svg className="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlinkHref="#exclamation-triangle-fill"/></svg>
+                      <div>You must enter a phone number</div>
+                    </div> : <span></span>}
+                    
+                    {/* {expert==null? <div className="alert alert-danger" role="alert">You must selet a expert  <br></br></div> : <span></span>}
+                    {info.name==""? <div className="alert alert-danger" role="alert">You must enter a name  <br></br></div>:<span></span>}
+                    {info.email==""?<div className="alert alert-danger" role="alert">You must enter a email  <br></br></div>:<span></span>}
+                    {info.phone==""? <div className="alert alert-danger" role="alert">You must enter a phone number  <br></br></div>:<span></span>}
+                    {date==null ? <div className="alert alert-danger" role="alert">You must select a time</div>: <span></span>} */}
+                    
                     </div>  :
                       
                       <>

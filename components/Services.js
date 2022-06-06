@@ -68,8 +68,8 @@ export default function Services() {
           <input
             type="text"
             onChange={handleSearchInput}
-            className="form-control-lg text-center w-100"
-            placeholder="Service Name"
+            className="form-control-lg text-center w-100 rounded-pill fs-2"
+            placeholder="Search Service Name"
             aria-label="Recipient's username"
             aria-describedby="button-addon2"
           />

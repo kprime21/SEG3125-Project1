@@ -55,8 +55,8 @@ export default function Experts() {
           <input
             type="text"
             onChange={handleSearchInput}
-            className="form-control-lg text-center w-100"
-            placeholder="Expert Name"
+            className="form-control-lg text-center w-100 rounded-pill fs-2"
+            placeholder="Search Expert Name"
             aria-label="Recipient's username"
             aria-describedby="button-addon2"
           />
