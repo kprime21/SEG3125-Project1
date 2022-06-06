@@ -78,7 +78,7 @@ export default function Booking(){
         <>
             <ContainerFluid  className="container-fluid">
                 <div className="row  mb-5 d-flex flex-row justify-content-evenly">
-                    <div className="col-lg-3 shadow-lg rounded fs-2 py-3 mb-3" style={{color:'white'}} align="center">
+                    <div className="col-lg-3 shadow-lg rounded fs-1 py-3 mb-3 d-flex flex-column" style={{color:'white'}} align="center">
                     Service: {(service=='-' || service==null) ? 'None' : service.name}
                     <br></br>
                     
@@ -91,13 +91,13 @@ export default function Booking(){
                         <img src={`/thinking1.svg`} alt="" /> 
                     </a>}
                     <Link href='/services'>
-                    <button className={`btn btn-md fs-2 ${styles.buttonColour} rounded-pill shadow-lg`}>{service!='-' && service!=null ? 'Change Service' : <span className={`${styles.blink}`}>Click Here!</span>}</button>
+                    <button className={`btn btn-md mt-auto fs-2 ${styles.buttonColour} rounded-pill shadow-lg`}>{service!='-' && service!=null ? 'Change Service' : <span className={`${styles.blink}`}>Click Here!</span>}</button>
                     </Link>
                     </div>  
                     
                     
                     
-                    <div className="col-lg-3 shadow-lg rounded fs-2 py-3" style={{color:'white'}} align="center">
+                    <div className="col-lg-3 shadow-lg rounded fs-1 mb-3 py-3 d-flex flex-column" style={{color:'white'}} align="center">
                     Expert: {(expert=='-' || expert==null) ? 'None' : expert.name}
                     <br></br>
                     
@@ -111,7 +111,7 @@ export default function Booking(){
                     </a>}
                     
                     <Link href='/experts'>
-                    <button className={`btn btn-md fs-2 ${styles.buttonColour} rounded-pill shadow-lg`}>{expert!='-' && expert!=null ? 'Change Expert' :  <span className={`${styles.blink}`}>Click Here!</span>}</button>
+                    <button className={`btn btn-md mt-auto fs-2 ${styles.buttonColour} rounded-pill shadow-lg`}>{expert!='-' && expert!=null ? 'Change Expert' :  <span className={`${styles.blink}`}>Click Here!</span>}</button>
                     </Link>
                     </div>  
 
