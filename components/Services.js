@@ -105,7 +105,7 @@ export default function Services() {
                 </div>
 
                 <div className="modal fade" id={`exampleModal${item.id}`} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className={`modal-dialog modal-md modal-dialog-centered `}>
+                <div className={`modal-dialog modal-md modal-dialog-scrollable modal-dialog-centered `}>
                   <div className={`modal-content ${styles.backgroundColour}`} >
                   <div className={`modal-header ${styles.backgroundColour}`} >
                       <h5 className="modal-title" id="exampleModalLabel"></h5>

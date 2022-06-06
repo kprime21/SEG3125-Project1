@@ -78,7 +78,7 @@ export default function Booking(){
         <>
             <ContainerFluid  className="container-fluid">
                 <div className="row  mb-5 d-flex flex-row justify-content-evenly">
-                    <div className="col-lg-4 shadow-lg rounded fs-2 py-3" style={{color:'white'}} align="center">
+                    <div className="col-lg-3 shadow-lg rounded fs-2 py-3 mb-3" style={{color:'white'}} align="center">
                     Service: {(service=='-' || service==null) ? 'None' : service.name}
                     <br></br>
                     
@@ -91,13 +91,13 @@ export default function Booking(){
                         <img src={`/thinking1.svg`} alt="" /> 
                     </a>}
                     <Link href='/services'>
-                    <button className={`btn btn-md fs-2 ${styles.buttonColour} rounded-pill shadow-lg`}>{service!='-' && service!=null ? 'Change Service' : 'Click Here!'}</button>
+                    <button className={`btn btn-md fs-2 ${styles.buttonColour} rounded-pill shadow-lg`}>{service!='-' && service!=null ? 'Change Service' : <span className={`${styles.blink}`}>Click Here!</span>}</button>
                     </Link>
                     </div>  
                     
                     
                     
-                    <div className="col-lg-4 shadow-lg rounded fs-2 py-3" style={{color:'white'}} align="center">
+                    <div className="col-lg-3 shadow-lg rounded fs-2 py-3" style={{color:'white'}} align="center">
                     Expert: {(expert=='-' || expert==null) ? 'None' : expert.name}
                     <br></br>
                     
@@ -111,16 +111,16 @@ export default function Booking(){
                     </a>}
                     
                     <Link href='/experts'>
-                    <button className={`btn btn-md fs-2 ${styles.buttonColour} rounded-pill shadow-lg`}>{expert!='-' && expert!=null ? 'Change Expert' : 'Click Here!'}</button>
+                    <button className={`btn btn-md fs-2 ${styles.buttonColour} rounded-pill shadow-lg`}>{expert!='-' && expert!=null ? 'Change Expert' :  <span className={`${styles.blink}`}>Click Here!</span>}</button>
                     </Link>
                     </div>  
 
                 </div>
                 
                 <div className="row  mb-5 d-flex flex-column justify-content-center align-items-center">
-                <div className="col-lg-4  fs-2 py-5" style={{color:'white'}} align="center">
-                  Pick your day:
-                        <Calendar style={{backgroundColor:'red'}} className="my-auto" onChange={changeDay} value={value}></Calendar>
+                <div className="col-lg-4  fs-2 py-5"  align="center">
+                  <span style={{color:'white'}}>Pick your day:</span>
+                        <Calendar className={`my-auto w-100 `} onChange={changeDay} value={value}></Calendar>
                       
                     </div>
                     <div className="col-lg-4  fs-2 my-5 " style={{color:'white'}} align="center" >
@@ -156,13 +156,13 @@ export default function Booking(){
                     
                 </div>
 
-                <div className="row mb-5  w-50 mx-auto">
-                <div className="col">
-                        <div className="input-group flex-nowrap py-3">
+                <div className="row mb-5 mx-auto">
+                <div className="col-md-6 mx-auto ">
+                        <div className="input-group flex-nowrap py-3 ">
                             <span className={` ${styles.inputColour} input-group-text`}  id="addon-wrapping">Name</span>
-                            <input type="text" name="name" onChange={changeInfo}  value={info.name} className="form-control" placeholder="Name" aria-label="Username" aria-describedby="addon-wrapping"/>
+                            <input type="text" name="name" onChange={changeInfo}  value={info.name} className={`form-control`}  placeholder="Name" aria-label="Username" aria-describedby="addon-wrapping"/>
                         </div>
-                        <div className="input-group flex-nowrap py-3">
+                        <div className="input-group flex-nowrap py-3 ">
                             <span className={` ${styles.inputColour} input-group-text`} id="addon-wrapping">Email</span>
                             <input type="text" name="email" onChange={changeInfo} value={info.email} className="form-control" placeholder="Email" aria-label="Username" aria-describedby="addon-wrapping"/>
                         </div>
@@ -182,7 +182,7 @@ export default function Booking(){
 
 
                 <div className="row w-50 mx-auto">
-                <button type="button" onClick={confirmAppointment} data-bs-toggle="modal" data-bs-target={`#modalConfirm`} className={`btn btn-lg ${styles.buttonColour} rounded-pill`}> Book your appointment! </button> 
+                <button type="button" onClick={confirmAppointment} data-bs-toggle="modal" data-bs-target={`#modalConfirm`} className={`btn btn-lg ${styles.buttonColour} rounded-pill my-5`}> Book your appointment! </button> 
 
                 <div className="modal fade" id={`modalConfirm`} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className={`modal-dialog modal-xl modal-dialog-centered `}>
