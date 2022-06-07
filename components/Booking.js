@@ -6,6 +6,8 @@ import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 
 import React, { useState, useEffect } from 'react';
+import { withTheme } from "styled-components";
+
 
 
 
@@ -79,7 +81,7 @@ export default function Booking(){
             <ContainerFluid  className="container-fluid">
                 <div className="row  mb-5 d-flex flex-row justify-content-evenly " >
                     <div className="col-lg-3 shadow-lg rounded fs-2 py-3 mb-3 d-flex flex-column " style={{color:'white'}} align="center">
-                    Service: {(service=='-' || service==null) ? 'None' : service.name}
+                     {(service=='-' || service==null) ? 'Service: None' : <span>Service: <span className='fs-2 fw-bold' style={{color:"white", background:'#006EDC', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>{service.name}</span></span>}
                     <br></br>
                     
                     
@@ -98,7 +100,7 @@ export default function Booking(){
                     
                     
                     <div className="col-lg-3 shadow-lg rounded fs-2 mb-3 py-3 d-flex flex-column" style={{color:'white'}} align="center">
-                    Expert: {(expert=='-' || expert==null) ? 'None' : expert.name}
+                    {(expert=='-' || expert==null) ? 'Expert: None' : <span>Expert: <span className='fs-2 fw-bold' style={{color:"white", background:'#006EDC', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>{expert.name}</span></span>}
                     <br></br>
                     
                     
@@ -119,12 +121,12 @@ export default function Booking(){
                 
                 <div className="row  mb-5 d-flex flex-column justify-content-center align-items-center">
                 <div className="col-lg-4  fs-2 py-5"  align="center">
-                  <span style={{color:'white'}}>Pick your day:</span>
+                  <span style={{color:'white'}}>Pick your day:  <span className='fs-1 fw-bold' style={{color:"white", background:'#006EDC', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>{value.toDateString()}</span> <br></br> </span>
                         <Calendar  minDate={new Date()} className={`my-auto w-100 `} onChange={changeDay} value={value}></Calendar>
                       
                     </div>
                     <div className="col-lg-4  fs-2 my-5 " style={{color:'white'}} align="center" >
-                  Pick your time:
+                    <span style={{color:'white'}}>Pick your time: {date==null ?  <span className='fs-2 fw-bold' style={{color:"white", background:'#006EDC', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>None Selected</span> :<span className='fs-2 fw-bold' style={{color:"white", background:'#006EDC', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>{date}</span>} <br></br> </span>
                  <div className="btn-group" role="group" aria-label="Basic radio toggle button group" style={{display:'flex', flexDirection:'column',flexWrap:'wrap'}}>
                 { (value.getDay()== 0 || value.getDay()==6) ? 
                 times[1].map(item=>{
@@ -195,8 +197,8 @@ export default function Booking(){
                 <button type="button" onClick={confirmAppointment} data-bs-toggle="modal" data-bs-target={`#modalConfirm`} className={`btn btn-lg ${styles.buttonColour} rounded-pill my-5`}> Book your appointment! </button> 
 
                 <div className="modal fade" id={`modalConfirm`} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className={`modal-dialog modal-xl modal-dialog-centered `}>
-                  <div className={`modal-content ${styles.backgroundColour}`} >
+                <div className={`modal-dialog modal-xl modal-dialog-centered`}>
+                  <div className={`modal-content ${styles.backgroundColour}`}  style={{border:'5px solid transparent', borderRadius:'25px'}}>
                   <div className={`modal-header ${styles.backgroundColour}`} >
                       <h5 className="modal-title" id="exampleModalLabel"></h5>
                       <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -218,7 +220,7 @@ export default function Booking(){
                     </div> : <span></span>}
                     {date==null ? <div className="alert alert-danger d-flex align-items-center" role="alert">
                       <svg className="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlinkHref="#exclamation-triangle-fill"/></svg>
-                      <div>You must select a date</div>
+                      <div>You must select a time</div>
                     </div> : <span></span>}
                     {info.name==""? <div className="alert alert-danger d-flex align-items-center" role="alert">
                       <svg className="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlinkHref="#exclamation-triangle-fill"/></svg>
@@ -242,7 +244,7 @@ export default function Booking(){
                     </div>  :
                       
                       <>
-                      <h1 style={{color:'white'}} align="center">Hi! {info.name}</h1>
+                      <h1 style={{color:'white'}} align="center">Congrats! {info.name}</h1>
                         
 
                       <p className="fs-2" align="center">

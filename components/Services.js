@@ -97,7 +97,7 @@ export default function Services() {
                       href="#"
                       data-bs-toggle="modal"
                       data-bs-target={`#exampleModal${item.id}`}
-                      className={`btn btn-md mt-auto ${styles.buttonColour} rounded-pill shadow-lg`}
+                      className={`btn btn-md mt-auto ${styles.buttonColour} rounded-pill shadow-lg fs-4`}
                     >
                       Read More
                     </a>
@@ -106,7 +106,7 @@ export default function Services() {
 
                 <div className="modal fade" id={`exampleModal${item.id}`} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className={`modal-dialog modal-md modal-dialog-scrollable modal-dialog-centered `}>
-                  <div className={`modal-content ${styles.backgroundColour}`} >
+                  <div className={`modal-content ${styles.backgroundColour}`} style={{border:'5px solid transparent', borderRadius:'25px'}}>
                   <div className={`modal-header ${styles.backgroundColour}`} >
                       <h5 className="modal-title" id="exampleModalLabel"></h5>
                       <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
