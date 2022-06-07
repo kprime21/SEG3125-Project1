@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 
 
 
+
 const ButtonHighlight = styled.button`
 :active{
   color:blue;
@@ -51,7 +52,8 @@ export default function Booking(){
     
     useEffect(()=>{
         if(typeof window !== "undefined"){
-          
+
+            
             setService(JSON.parse(sessionStorage.getItem('service')))
             setExpert(JSON.parse(sessionStorage.getItem('expert')))
         }
@@ -64,12 +66,14 @@ export default function Booking(){
 
     const changeDate = (event) => {
       setDate(event.target.textContent)
+      
 
     }
 
     const changeInfo = (event) => {
-      console.log(info)
+      
       setInfo({...info, [event.target.name]: event.target.value})
+      
     }
 
     const confirmAppointment = (event) => {
@@ -81,7 +85,7 @@ export default function Booking(){
             <ContainerFluid  className="container-fluid">
                 <div className="row  mb-5 d-flex flex-row justify-content-evenly " >
                     <div className="col-lg-3 shadow-lg rounded fs-2 py-3 mb-3 d-flex flex-column " style={{color:'white'}} align="center">
-                     {(service=='-' || service==null) ? 'Service: None' : <span>Service: <span className='fs-2 fw-bold' style={{color:"white", background:'#006EDC', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>{service.name}</span></span>}
+                     {(service=='-' || service==null) ? 'Service: None' : <span>Service: <span className='fs-2' style={{color:"white", background:'#006EDC', boxDecorationBreak:'clone', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px', }}>{service.name}</span></span>}
                     <br></br>
                     
                     
@@ -94,14 +98,14 @@ export default function Booking(){
                     </a>}
                     <Link href='/services'>
                     <motion.button whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.9 }} className={`btn btn-md mt-auto fs-2 ${styles.buttonColour} rounded-pill shadow-lg`}>{service!='-' && service!=null ? 'Change Service' : <span className={`${styles.blink}`}>Click Here!</span>}</motion.button>
+            whileTap={{ scale: 0.9 }} className={`btn btn-md mt-auto fs-2 ${styles.buttonColour} rounded-pill shadow-lg`}>{service!='-' && service!=null ? 'Change Service' : <span className={`${styles.blink}`}>Choose Service!</span>}</motion.button>
                     </Link>
                     </div>  
                     
                     
                     
                     <div className="col-lg-3 shadow-lg rounded fs-2 mb-3 py-3 d-flex flex-column" style={{color:'white'}} align="center">
-                    {(expert=='-' || expert==null) ? 'Expert: None' : <span>Expert: <span className='fs-2 fw-bold' style={{color:"white", background:'#006EDC', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>{expert.name}</span></span>}
+                    {(expert=='-' || expert==null) ? 'Expert: None' : <span>Expert: <span className='fs-2 fw-bold' style={{color:"white", background:'#006EDC',boxDecorationBreak:'clone', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px',}}>{expert.name}&nbsp;</span></span>}
                     <br></br>
                     
                     
@@ -115,7 +119,7 @@ export default function Booking(){
                     
                     <Link href='/experts'>
                     <motion.button whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.9 }} className={`btn btn-md mt-auto fs-2 ${styles.buttonColour} rounded-pill shadow-lg`}>{expert!='-' && expert!=null ? 'Change Expert' :  <span className={`${styles.blink}`}>Click Here!</span>}</motion.button>
+            whileTap={{ scale: 0.9 }} className={`btn btn-md mt-auto fs-2 ${styles.buttonColour} rounded-pill shadow-lg`}>{expert!='-' && expert!=null ? 'Change Expert' :  <span className={`${styles.blink}`}>Choose Expert!</span>}</motion.button>
                     </Link>
                     </div>  
 
@@ -123,12 +127,12 @@ export default function Booking(){
                 
                 <div className="row  mb-5 d-flex flex-column justify-content-center align-items-center">
                 <div className="col-lg-4  fs-2 py-5"  align="center">
-                  <span style={{color:'white'}}>Pick your day:  <span className='fs-1 fw-bold' style={{color:"white", background:'#006EDC', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>{value.toDateString()}</span> <br></br> </span>
+                  <span style={{color:'white'}}>Pick your day:  <span className='fs-1 fw-bold' style={{color:"white", background:'#006EDC', boxDecorationBreak:'clone',border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>{value.toDateString()}</span> <br></br> </span>
                         <Calendar  minDate={new Date()} className={`my-auto w-100 `} onChange={changeDay} value={value}></Calendar>
                       
                     </div>
                     <div className="col-lg-4  fs-2 my-5 " style={{color:'white'}} align="center" >
-                    <span style={{color:'white'}}>Pick your time: {date==null ?  <span className='fs-2 fw-bold' style={{color:"white", background:'#006EDC', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>None Selected</span> :<span className='fs-2 fw-bold' style={{color:"white", background:'#006EDC', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>{date}</span>} <br></br> </span>
+                    <span style={{color:'white'}}>Pick your time: {date==null ?  <span className='fs-2 fw-bold text-muted' style={{color:"white",  boxDecorationBreak:'clone', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>None Selected</span> :<span className='fs-2 fw-bold' style={{color:"white", background:'#006EDC',boxDecorationBreak:'clone', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>{date}</span>} <br></br> </span>
                  <div className="btn-group" role="group" aria-label="Basic radio toggle button group" style={{display:'flex', flexDirection:'column',flexWrap:'wrap'}}>
                 { (value.getDay()== 0 || value.getDay()==6) ? 
                 times[1].map(item=>{
@@ -195,9 +199,18 @@ export default function Booking(){
   </symbol>
 </svg>
 
-                <div className="row w-50 mx-auto">
-                <button type="button" onClick={confirmAppointment} data-bs-toggle="modal" data-bs-target={`#modalConfirm`} className={`btn btn-lg ${styles.buttonColour} rounded-pill my-5`}> Book your appointment! </button> 
+                <div className="row w-25 mx-auto">
+                { service==null || service=='-'|| expert==null || expert=='-' || info.name=="" || info.email=="" || info.phone=="" || date==null ? 
+                <button type="button" onClick={confirmAppointment} data-bs-toggle="modal" data-bs-target={`#modalConfirm`} className={`btn btn-lg ${styles.buttonColour} text-muted rounded-pill my-5`}> Complete form </button> 
 
+                :
+
+                <motion.button 
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+                type="button" onClick={confirmAppointment} data-bs-toggle="modal" data-bs-target={`#modalConfirm`} className={`btn btn-lg ${styles.buttonColour} rounded-pill my-5`}> Book your appointment! </motion.button> 
+              
+              }
                 <div className="modal fade" id={`modalConfirm`} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className={`modal-dialog modal-xl modal-dialog-centered`}>
                   <div className={`modal-content ${styles.backgroundColour}`}  style={{border:'5px solid transparent', borderRadius:'25px'}}>
@@ -207,7 +220,7 @@ export default function Booking(){
                     </div>
                     <div className="modal-body">
                     <div className="container-fluid">
-                    {service==null || service=='-'|| expert==null || expert=='-' || info.name=="" || info.email=="" || info.phone=="" || date==null? <div> 
+                    {service==null || service=='-'|| expert==null || expert=='-' || info.name=="" || info.email=="" || info.phone=="" || date==null ? <div> 
                       
                       
                     
