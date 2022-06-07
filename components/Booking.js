@@ -6,7 +6,7 @@ import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 
 import React, { useState, useEffect } from 'react';
-import { withTheme } from "styled-components";
+import { motion } from "framer-motion";
 
 
 
@@ -93,7 +93,8 @@ export default function Booking(){
                         <img src={`/thinking1.svg`} alt="" /> 
                     </a>}
                     <Link href='/services'>
-                    <button className={`btn btn-md mt-auto fs-2 ${styles.buttonColour} rounded-pill shadow-lg`}>{service!='-' && service!=null ? 'Change Service' : <span className={`${styles.blink}`}>Click Here!</span>}</button>
+                    <motion.button whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }} className={`btn btn-md mt-auto fs-2 ${styles.buttonColour} rounded-pill shadow-lg`}>{service!='-' && service!=null ? 'Change Service' : <span className={`${styles.blink}`}>Click Here!</span>}</motion.button>
                     </Link>
                     </div>  
                     
@@ -113,7 +114,8 @@ export default function Booking(){
                     </a>}
                     
                     <Link href='/experts'>
-                    <button className={`btn btn-md mt-auto fs-2 ${styles.buttonColour} rounded-pill shadow-lg`}>{expert!='-' && expert!=null ? 'Change Expert' :  <span className={`${styles.blink}`}>Click Here!</span>}</button>
+                    <motion.button whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }} className={`btn btn-md mt-auto fs-2 ${styles.buttonColour} rounded-pill shadow-lg`}>{expert!='-' && expert!=null ? 'Change Expert' :  <span className={`${styles.blink}`}>Click Here!</span>}</motion.button>
                     </Link>
                     </div>  
 

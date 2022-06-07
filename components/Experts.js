@@ -3,7 +3,7 @@ import styles from './Extra.module.css'
 import {useState, useEffect} from 'react'
 import Image from "next/image";
 import { useRouter } from "next/router";
-
+import { motion } from "framer-motion";
 const ExpertsHolder = styled.div`
 
 `;
@@ -119,9 +119,8 @@ export default function Experts() {
                       </div>
                     </div>
                     <div className={`modal-footer ${styles.backgroundColour}`} >
-                      <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      
-                       <button type="button" className={`btn btn-md mt-auto btn-primary  shadow-lg`}  data-bs-dismiss="modal" onClick={() => setExpert({item})}>Book this expert</button>
+                    <motion.button whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }} type="button" className={`btn btn-md mt-auto ${styles.buttonColour} shadow-lg fs-2 rounded-pill mx-auto`}  data-bs-dismiss="modal" onClick={() => setExpert({item})}>Book this expert</motion.button>
                       
                     </div>
                   </div>

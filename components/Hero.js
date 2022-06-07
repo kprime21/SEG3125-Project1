@@ -3,6 +3,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import styles from './Extra.module.css';
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
 const pics = ['amico.svg', 'bro.svg', 'cuate.svg', 'pana.svg','rafiki.svg'];
 
@@ -73,11 +74,18 @@ export default function Hero() {
         
         
         <span className={`fw-normal text-white text-center fs-1 ${styles.fontHeader}`}>Book your appointment  <span></span>
+        
           <Link href="/booking">
-           <button type="button" className={`btn btn-lg fs-1 ${styles.buttonColour} rounded-pill shadow-lg`}> Right Now! </button> 
+          <motion.button
+           whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+            type="button" className={`btn btn-lg fs-1 ${styles.buttonColour} rounded-pill shadow-lg`}
+            >
+            Right Now! 
+           </motion.button>
           </Link>
           </span>
-        
+          
           
         
       </div>
@@ -123,7 +131,8 @@ export default function Hero() {
 <div className={`card ${styles.backgroundColour} shadow-lg  rounded text-light`}> 
   <div className={`card-body`}>
     
-    <p className="card-text fs-2" align='center'> To learn more about our services <br></br><Link href="/services"><a className={`btn btn-sm fs-4 ${styles.buttonColour} rounded-pill shadow-lg`} align='center'> Click here</a></Link></p>
+    <p className="card-text fs-2" align='center'> To learn more about our services <br></br><Link href="/services"><motion.a whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }} className={`btn btn-sm fs-4 ${styles.buttonColour} rounded-pill shadow-lg`} align='center'> Click here</motion.a></Link></p>
     
     
     
@@ -135,7 +144,8 @@ export default function Hero() {
 <div className={`card ${styles.backgroundColour} shadow-lg rounded text-light `}> 
   <div className={`card-body`}>
     
-    <p className="card-text fs-2" align='center'> To learn more about our experts <br></br><Link href="/experts"><a href="" className={`btn btn-sm fs-4 ${styles.buttonColour} rounded-pill shadow-lg`} align='center'> Click here</a></Link></p>
+    <p className="card-text fs-2" align='center'> To learn more about our experts <br></br><Link href="/experts"><motion.a whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }} href="" className={`btn btn-sm fs-4 ${styles.buttonColour} rounded-pill shadow-lg`} align='center'> Click here</motion.a></Link></p>
     
     
     
