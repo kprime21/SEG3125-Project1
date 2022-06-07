@@ -32,6 +32,11 @@
     color:white;
     background-color:rgb(238, 59, 59);
 }
+
+.hButtonColour{
+    color:white;
+    background-color:#006EDC;
+}
 .buttonColourWithBorder{
     background-color:rgb(238, 59, 59);
     border:5px solid transparent;

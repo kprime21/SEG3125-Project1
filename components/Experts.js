@@ -21,12 +21,19 @@ position: relative;
 `;
 
 
-const Examples = [{name:'John', text:'medical help', id:1}, {name:'Joe', text:'teeth cleaning' , id:2}, {name:'Bartholomew', text:'prevent rabies', id:3}
-, {name:'Dingle', text:'disease prevention', id:4}, {name:'Dale', text:'healing through lasers', id:5}, 
-{name:'Melly', text:'scans', id:6}, {name:'Carti', text:'surgery', id:7}, 
-{name:'Symere', text:'clean the pet', id:8}, {name:'Winthrop', text:'urgent care', id:9}, 
-{name:'Melon', text:'I dunno', id:10}, {name:'Jah', text:'ok',id:11},
-{name:'Dior', text:'Dior', id:12}, 
+const Examples = [
+{name:'John', text:'We try our best to restore and maintain the good health of your pets', id:1,}, 
+{name:'Ally', text:'I had to study several anatomies – human doctors had to deal with only one!!!!!' , id:2}, 
+{name:'Bartholomew', text:'We are not afraid of the wild animals, because they also need true care', id:3}, 
+{name:'Robert', text:'Keeping animals happy and healthy is a special privilege for vets, vet techs, and their entire team', id:4}, 
+{name:'Ariana', text:'We have to give the pets proper attention as they cannot express their feelings', id:5}, 
+{name:'Melly', text:'We can appreciate our works when we can restore the health of our wordless clients', id:6}, 
+{name:'Carti', text:'We believe that maintaining of balance of all the lives of our planet is our responsibilities', id:7}, 
+{name:'Charli', text:'Protect the health of every animal, thus protect your own planet', id:8}, 
+{name:'Winthrop', text:'Our target is to cure every animal of this world', id:9}, 
+{name:'Megan', text:'Our goal is to help the animals living a safe and healthy life', id:10}, 
+{name:'Hailey', text:'Helping animals is a photo of my soul, the coat of my will',id:11},
+{name:'Billie', text:'Paws, whiskers and a dose of love', id:12}, 
 ]
 
 
@@ -107,14 +114,14 @@ export default function Experts() {
                       <h1 style={{color:'white'}}>{item.name}</h1>  
                       
                       <p>
-                        LOREM IMPSUM LOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUM
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in arcu sodales, semper urna sit amet, placerat dui. Proin vel nisl ut orci semper porta et sit amet lorem. Nunc dapibus lacus id ante laoreet mollis. Vestibulum eu est nibh. Praesent at ex quis nulla maximus accumsan a vel turpis. In congue, enim vitae aliquet dignissim, felis felis tempus massa, eget consequat mauris risus et lectus. Etiam a vehicula est, at rhoncus purus. Nulla sed lacinia ligula, quis lacinia metus. 
                       </p>
                       </div>
                     </div>
                     <div className={`modal-footer ${styles.backgroundColour}`} >
                       <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                       
-                       <button type="button" className={`btn btn-md mt-auto ${styles.buttonColour}  shadow-lg`}  data-bs-dismiss="modal" onClick={() => setExpert({item})}>Select this expert</button>
+                       <button type="button" className={`btn btn-md mt-auto btn-primary  shadow-lg`}  data-bs-dismiss="modal" onClick={() => setExpert({item})}>Book this expert</button>
                       
                     </div>
                   </div>

@@ -6,7 +6,7 @@ First, run the development server:
 
 ```bash
 git clone https://github.com/kprime21/bootstrap-nextjs.git
-cd bootstrap-nextjs
+cd SEG3125-Project1
 npm install
 npm run dev
 # or
@@ -16,7 +16,15 @@ yarn run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+
+## Project Set Up
+
+- All code for components can be found in ./components
+- Page routes can be found in ./pages
+- Layout component is used to wrap the main components in _app.js
+- Layout component contains the Navbar and Footer
+- Framer-motion used for page transitions
+- Pictures from [Storyset by freepik][https://storyset.com/]
 
 
 ## View on Vercel

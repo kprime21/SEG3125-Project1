@@ -21,26 +21,28 @@ const ImageHolder = styled.div`
 `;
 
 const Examples = [
-  { name: "Medical", text: "medical help", id: 1, explain:'Our clinic operates through a social enterprise model. Our fee structure is set so that we can best serve all pet parents in-need, through the provision of high-quality, high-volume services. We have a two-tier pricing model that takes the small profits from our full paying clientele, and uses them to subsidize and provide lower cost services to qualifying individuals in need.' },
-  { name: "Dental", text: "teeth cleaning", id: 2, explain:'clean your pets teeth so it is not dirty'},
-  { name: "Vaccinations", text: "prevent rabies", id: 3 },
-  { name: "Preventive care", text: "disease prevention", id: 4 },
-  { name: "Laser Therapy", text: "healing through lasers", id: 5 },
-  { name: "Radiology", text: "scans", id: 6 },
-  { name: "Surgical", text: "surgery", id: 7 },
-  { name: "Grooming", text: "clean the pet", id: 8 },
-  { name: "Emergency care", text: "urgent care", id: 9 },
+  { name: "Medical", text: "General medical help", id: 1, cost:'$100'},
+  { name: "Dental", text: "Dental cleaning", id: 2, cost:'$200'},
+  { name: "Vaccinations", text: "Needle shot", id: 3, cost:'$100' },
+  { name: "Preventive care", text: "Disease prevention", id: 4, cost:'$200'},
+  { name: "Laser Therapy", text: "Healing through lasers", id: 5, cost:'$500' },
+  { name: "Radiology", text: "Scan your pet", id: 6, cost:'$500' },
+  { name: "Surgical", text: "Provide surgery to your pet", id: 7, cost:'$1000' },
+  { name: "Grooming", text: "Wash your pet and make him brand new", id: 8, cost:'$100' },
+  { name: "Emergency care", text: "Urgent care", id: 9, cost:'Varies' },
   {
     name: "Weight Management",
-    text: "help lose weight to keep healthy",
+    text: "Help lose weight to keep healthy",
     id: 10,
+    cost:'Varies'
   },
   {
     name: "End of Life",
     text: "we want to make sure your pet is happy",
     id: 11,
+    cost:'No cost'
   },
-  { name: "Physical Rebilitation", text: "Training", id: 12 },
+  { name: "Physical Rebilitation", text: "Train your pet to get rid of bad behaviour", id: 12, cost:'$500' },
 ];
 
 export default function Services() {
@@ -118,10 +120,12 @@ export default function Services() {
                         <img src={`/services/${item.id}.svg`} alt="" /> 
                       </a>
                       <h1 style={{color:'white'}}>{item.name}</h1>
-                      <h3>COST: XXXX</h3>
+                      <h3>COST: {item.cost}</h3>
                 
                       <p>
-                        LOREM IMPSUM LOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUMLOREM IMPSUM
+                        
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in arcu sodales, semper urna sit amet, placerat dui. Proin vel nisl ut orci semper porta et sit amet lorem. Nunc dapibus lacus id ante laoreet mollis. Vestibulum eu est nibh. Praesent at ex quis nulla maximus accumsan a vel turpis. 
                       </p>
                       
                       </div>
