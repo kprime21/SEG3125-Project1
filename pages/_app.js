@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import {AnimatePresence} from 'framer-motion'
 import "bootstrap/dist/css/bootstrap.css";
 import React, { useEffect } from "react";
 import "../styles/globals.css";
@@ -18,9 +18,11 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <>
-
+    
       <Layout>
+      <AnimatePresence exitBeforeEnter>
         <Component {...pageProps} />
+        </AnimatePresence>
       </Layout>
     </>
   );
