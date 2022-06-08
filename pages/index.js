@@ -12,13 +12,8 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Magnolia Petcare</title>
-        <meta
-          property="og:title"
-          content="Magnolia Petcare"
-        />
-        <meta name="description" content="We will take care of your pet" />
         <meta property="og:image" content={"/preview.png"} />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="We will take care of your pet" />
       </Head>
       <motion.div
         initial={{ opacity: 0 }}

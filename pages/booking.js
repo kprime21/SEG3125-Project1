@@ -10,8 +10,9 @@ export default function Home() {
     <div className={styles.container}>
        <Head>
         <title>Magnolia Petcare: Booking</title>
+        <meta property="og:image" content={"/preview.png"} />
         <meta name="description" content="Book your appointment" />
-        <link rel="icon" href="/favicon.ico" />
+        
       </Head>
       <motion.div
         initial={{ opacity: 0 }}
