@@ -123,7 +123,7 @@ export default function Booking(){
         <>
             <ContainerFluid  className="container-fluid">
                 <div className="row  mb-5 d-flex flex-row justify-content-evenly " >
-                    <div className="col-lg-3 shadow-lg rounded fs-2 py-3 mb-3 d-flex flex-column " style={{color:'white'}} align="center">
+                    <div className="col-md-3 shadow-lg rounded fs-2 py-3 mb-3 d-flex flex-column " style={{color:'white'}} align="center">
                      {(service=='-' || service==null) ? 'Service: None' : <span>Service: <span className='fs-2' style={{color:"white", background:'#006EDC', boxDecorationBreak:'clone', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px', }}>{service.name}</span></span>}
                     <br></br>
                     
@@ -143,7 +143,7 @@ export default function Booking(){
                     
                     
                     
-                    <div className="col-lg-3 shadow-lg rounded fs-2 mb-3 py-3 d-flex flex-column" style={{color:'white'}} align="center">
+                    <div className="col-md-3 shadow-lg rounded fs-2 mb-3 py-3 d-flex flex-column" style={{color:'white'}} align="center">
                     {(expert=='-' || expert==null) ? 'Expert: None' : <span>Expert: <span className='fs-2 fw-bold' style={{color:"white", background:'#006EDC',boxDecorationBreak:'clone', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px',}}>{expert.name}&nbsp;</span></span>}
                     <br></br>
                     

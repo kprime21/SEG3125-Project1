@@ -24,7 +24,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Layout component is used to wrap the main components in _app.js
 - Layout component contains the Navbar and Footer
 - Framer-motion used for page transitions
-- Pictures from [Storyset by freepik][https://storyset.com/]
+- Pictures from [Storyset by freepik](https://storyset.com/)
 
 
 ## View on Vercel

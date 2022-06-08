@@ -30,8 +30,10 @@ width:100%;
 const HeroImagePicture = styled.div`
 position:relative;
 width: 100%;
-
-
+margin:auto;
+@media only screen and (max-width: 992px) {
+  width:65%;
+}
 
 >span {
     position: unset !important;
