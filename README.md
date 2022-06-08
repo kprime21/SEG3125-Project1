@@ -5,7 +5,7 @@ This is a [Next.js](https://nextjs.org/) using [Bootstrap v5](https://getbootstr
 First, run the development server:
 
 ```bash
-git clone https://github.com/kprime21/bootstrap-nextjs.git
+git clone https://github.com/kprime21/SEG3125-Project1.git
 cd SEG3125-Project1
 npm install
 npm run dev

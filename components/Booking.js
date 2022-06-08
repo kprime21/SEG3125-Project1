@@ -50,10 +50,19 @@ export default function Booking(){
     
       
     
+
     useEffect(()=>{
         if(typeof window !== "undefined"){
 
+            if(sessionStorage.getItem('value')){
+              setValue(new Date(sessionStorage.getItem('value')))
+            }
             
+            setDate(sessionStorage.getItem('date'))
+            
+            if(sessionStorage.getItem('info')){
+            setInfo(JSON.parse(sessionStorage.getItem('info')))
+            }
             setService(JSON.parse(sessionStorage.getItem('service')))
             setExpert(JSON.parse(sessionStorage.getItem('expert')))
         }
@@ -61,11 +70,34 @@ export default function Booking(){
 
     const changeDay = (event) => {
       
+      if(date ){
+        
+        
+        if((value.getDay() == 0 || value.getDay() == 6) && (event.getDay() !=6 && event.getDay() !=0)){
+          console.log(value.getDay(), event.getDay())
+          sessionStorage.removeItem('date')
+          setDate(null)
+          
+        }
+
+        if((value.getDay()!=6 && value.getDay() !=0) && (event.getDay() == 0 || event.getDay() ==6)){
+          console.log(value.getDay(), event.getDay())
+          sessionStorage.removeItem('date')
+          setDate(null)
+        }
+
+        
+
+        
+      }
       setValue(event)
+      sessionStorage.setItem('value', event)
+      
     }
 
     const changeDate = (event) => {
       setDate(event.target.textContent)
+      sessionStorage.setItem('date', event.target.textContent)
       
 
     }
@@ -73,6 +105,7 @@ export default function Booking(){
     const changeInfo = (event) => {
       
       setInfo({...info, [event.target.name]: event.target.value})
+      sessionStorage.setItem('info',JSON.stringify({...info, [event.target.name]:event.target.value}))
       
     }
 
@@ -132,7 +165,7 @@ export default function Booking(){
                       
                     </div>
                     <div className="col-lg-4  fs-2 my-5 " style={{color:'white'}} align="center" >
-                    <span style={{color:'white'}}>Pick your time: {date==null ?  <span className='fs-2 fw-bold text-muted' style={{color:"white",  boxDecorationBreak:'clone', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>None Selected</span> :<span className='fs-2 fw-bold' style={{color:"white", background:'#006EDC',boxDecorationBreak:'clone', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>{date}</span>} <br></br> </span>
+                    {date==null ? <span style={{color:'white'}}>Pick your time:  <span className='fs-2 fw-bold text-muted' style={{color:"white",  boxDecorationBreak:'clone', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>None Selected</span></span> : <span style={{color:'white'}}>Time Selected: <span className='fs-2 fw-bold' style={{color:"white", background:'#006EDC',boxDecorationBreak:'clone', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>{date}</span></span>} <br></br> 
                  <div className="btn-group" role="group" aria-label="Basic radio toggle button group" style={{display:'flex', flexDirection:'column',flexWrap:'wrap'}}>
                 { (value.getDay()== 0 || value.getDay()==6) ? 
                 times[1].map(item=>{
@@ -165,17 +198,17 @@ export default function Booking(){
                 </div>
 
                 <div className="row mb-5 mx-auto">
-                <div className="col-md-6 mx-auto ">
-                        <div className="input-group flex-nowrap py-3 ">
-                            <span className={` ${styles.inputColour} input-group-text`}  id="addon-wrapping">Name</span>
+                <div className="col-md-6 mx-auto d-flex flex-column">
+                        <div className="input-group flex-nowrap py-3">
+                            <span className={` ${styles.inputColour} input-group-text`} style={{minWidth:'80px'}} id="addon-wrapping">Name</span>
                             <input type="text" name="name" onChange={changeInfo}  value={info.name} className={`form-control`}  placeholder="Name" aria-label="Username" aria-describedby="addon-wrapping"/>
                         </div>
                         <div className="input-group flex-nowrap py-3 ">
-                            <span className={` ${styles.inputColour} input-group-text`} id="addon-wrapping">Email</span>
+                            <span className={` ${styles.inputColour} input-group-text`} style={{minWidth:'80px'}} id="addon-wrapping">Email</span>
                             <input type="text" name="email" onChange={changeInfo} value={info.email} className="form-control" placeholder="Email" aria-label="Username" aria-describedby="addon-wrapping"/>
                         </div>
                         <div className="input-group flex-nowrap py-3">
-                            <span className={` ${styles.inputColour} input-group-text`} id="addon-wrapping">Phone</span>
+                            <span className={` ${styles.inputColour} input-group-text`} style={{minWidth:'80px'}} id="addon-wrapping">Phone</span>
                             <input type="text" name="phone" onChange={changeInfo} value={info.phone} className="form-control" placeholder="Phone" aria-label="Username" aria-describedby="addon-wrapping"/>
                         </div>
                     </div>
@@ -199,16 +232,16 @@ export default function Booking(){
   </symbol>
 </svg>
 
-                <div className="row w-25 mx-auto">
+                <div className="row w-50 mx-auto">
                 { service==null || service=='-'|| expert==null || expert=='-' || info.name=="" || info.email=="" || info.phone=="" || date==null ? 
-                <button type="button" onClick={confirmAppointment} data-bs-toggle="modal" data-bs-target={`#modalConfirm`} className={`btn btn-lg ${styles.buttonColour} text-muted rounded-pill my-5`}> Complete form </button> 
+                <button type="button" onClick={confirmAppointment} data-bs-toggle="modal" data-bs-target={`#modalConfirm`} className={`btn btn-lg ${styles.buttonColour} text-muted rounded-pill my-5 w-auto mx-auto`} style={{wordWrap:'break-word'}}> Complete form </button> 
 
                 :
 
                 <motion.button 
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ repeat: Infinity, duration: 2 }}
-                type="button" onClick={confirmAppointment} data-bs-toggle="modal" data-bs-target={`#modalConfirm`} className={`btn btn-lg ${styles.buttonColour} rounded-pill my-5`}> Book your appointment! </motion.button> 
+                type="button" onClick={confirmAppointment} data-bs-toggle="modal" data-bs-target={`#modalConfirm`} className={`btn btn-lg ${styles.buttonColour} rounded-pill my-5  w-auto mx-auto`} style={{wordWrap:'break-word'}}> Book your appointment! </motion.button> 
               
               }
                 <div className="modal fade" id={`modalConfirm`} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
