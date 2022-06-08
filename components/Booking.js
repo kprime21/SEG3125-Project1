@@ -5,7 +5,7 @@ import styles from './Extra.module.css'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from "framer-motion";
 
 
@@ -47,7 +47,7 @@ export default function Booking(){
     const [info, setInfo] = useState({name:'', email:'', phone:''})
 
     
-    
+    const dateRef = useRef(null)
       
     
 
@@ -57,16 +57,21 @@ export default function Booking(){
             if(sessionStorage.getItem('value')){
               setValue(new Date(sessionStorage.getItem('value')))
             }
-            
             setDate(sessionStorage.getItem('date'))
-            
             if(sessionStorage.getItem('info')){
-            setInfo(JSON.parse(sessionStorage.getItem('info')))
+              setInfo(JSON.parse(sessionStorage.getItem('info')))
             }
             setService(JSON.parse(sessionStorage.getItem('service')))
             setExpert(JSON.parse(sessionStorage.getItem('expert')))
         }
     }, [])
+ 
+    useEffect( ()=> {
+      dateRef.current.focus()
+      if(sessionStorage.getItem("id")){
+        Array.from(dateRef.current.children).reverse().filter(items => items.id == sessionStorage.getItem('id'))[0].checked= true
+      }
+    }, [date])
 
     const changeDay = (event) => {
       
@@ -76,6 +81,7 @@ export default function Booking(){
         if((value.getDay() == 0 || value.getDay() == 6) && (event.getDay() !=6 && event.getDay() !=0)){
           console.log(value.getDay(), event.getDay())
           sessionStorage.removeItem('date')
+          sessionStorage.removeItem('id')
           setDate(null)
           
         }
@@ -83,12 +89,10 @@ export default function Booking(){
         if((value.getDay()!=6 && value.getDay() !=0) && (event.getDay() == 0 || event.getDay() ==6)){
           console.log(value.getDay(), event.getDay())
           sessionStorage.removeItem('date')
+          sessionStorage.removeItem('id')
           setDate(null)
         }
 
-        
-
-        
       }
       setValue(event)
       sessionStorage.setItem('value', event)
@@ -96,9 +100,11 @@ export default function Booking(){
     }
 
     const changeDate = (event) => {
+      
       setDate(event.target.textContent)
       sessionStorage.setItem('date', event.target.textContent)
-      
+      sessionStorage.setItem('id', (event.target.htmlFor))
+      dateRef.current.focus()
 
     }
 
@@ -166,13 +172,13 @@ export default function Booking(){
                     </div>
                     <div className="col-lg-4  fs-2 my-5 " style={{color:'white'}} align="center" >
                     {date==null ? <span style={{color:'white'}}>Pick your time:  <span className='fs-2 fw-bold text-muted' style={{color:"white",  boxDecorationBreak:'clone', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>None Selected</span></span> : <span style={{color:'white'}}>Time Selected: <span className='fs-2 fw-bold' style={{color:"white", background:'#006EDC',boxDecorationBreak:'clone', border:'5px, solid, transparent', borderRadius:'15px', padding:'5px'}}>{date}</span></span>} <br></br> 
-                 <div className="btn-group" role="group" aria-label="Basic radio toggle button group" style={{display:'flex', flexDirection:'column',flexWrap:'wrap'}}>
+                 <div ref={dateRef} className="btn-group" role="group" aria-label="Basic radio toggle button group" style={{display:'flex', flexDirection:'column',flexWrap:'wrap'}}>
                 { (value.getDay()== 0 || value.getDay()==6) ? 
                 times[1].map(item=>{
                   
                 return (
                   <React.Fragment key={item}>
-                  <input  type="radio" className="btn-check" name="btnradio" id={`btnradio${item}`} autoComplete="off"/>
+                  <input   type="radio" className="btn-check" name="btnradio" id={`btnradio${item}`} autoComplete="off"/>
                   <label  onClick={changeDate} className={` ${styles.buttonColourWithBorder} btn btn-primary`} htmlFor={`btnradio${item}`}>{item}:00 - {item+1}:00</label>
                   </React.Fragment>
                 )}
@@ -181,10 +187,10 @@ export default function Booking(){
 
                   times[0].map(item=>{
                     return (
-                      <React.Fragment key={item+100}>
-                      <input type="radio" className="btn-check" name="btnradio" id={`btnradio${item}`} autoComplete="off"/>
+                      < React.Fragment key={item+100}>
+                      <input  type="radio" className="btn-check" name="btnradio" id={`btnradio${item}`} autoComplete="off"/>
                       <label onClick ={changeDate} className={` ${styles.buttonColourWithBorder} btn btn-primary`} htmlFor={`btnradio${item}`}>{item}:00 - {item+1}:00</label>
-                      </React.Fragment>
+                      </ React.Fragment>
                     )}
                     )
                 
