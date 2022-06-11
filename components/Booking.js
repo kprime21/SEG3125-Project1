@@ -67,10 +67,15 @@ export default function Booking(){
     }, [])
  
     useEffect( ()=> {
+      try{
       dateRef.current.focus()
       if(sessionStorage.getItem("id")){
         Array.from(dateRef.current.children).reverse().filter(items => items.id == sessionStorage.getItem('id'))[0].checked= true
       }
+    }
+    catch{
+      
+    }
     }, [date])
 
     const changeDay = (event) => {
